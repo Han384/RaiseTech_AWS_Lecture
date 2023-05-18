@@ -76,9 +76,9 @@
 
 ■ イベント履歴　( 最後にAWSを利用した日の記録 )<br>
 - 《 イベント名 》 PutMetricAlarm　( = ※後述の CloudWatchアラーム ( OKアクション ) 作成分 )
-![event_history01](.images/../images/cloudtrail/event_history01.png)<br>
+![event_history01](./images/cloudtrail/event_history01.png)<br>
 ( イベントレコードより抜粋 )<br>
-![event_history02](.images/../images/cloudtrail/event_history02.png)<br>
+![event_history02](./images/cloudtrail/event_history02.png)<br>
 
 ■ 上記イベント内容に含まれている情報
 - イベント時間
