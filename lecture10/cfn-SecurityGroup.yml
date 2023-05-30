@@ -4,7 +4,7 @@ Description: template for Security Layer
 Parameters:
   VPCStack:
     Type: String
-    Default: cfn-VPC
+    Default: cfn-vpc
 
 Resources:
   EC2SecurityGroup:
