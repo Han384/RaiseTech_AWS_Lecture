@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: template for Security Layer
+Description: template for SecurityGroup / Security Layer
 
 Parameters:
   VPCStack:

@@ -1,0 +1,41 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: template for EC2 / Application Layer
+
+Parameters:
+  VPCStack:
+    Type: String
+    Default: cfn-vpc
+  SGStack:
+    Type: String
+    Default: cfn-securitygroup
+  EC2AMI:
+    Type: AWS::EC2::Image::Id
+    Default: ami-0de4adc6a40e2be00
+    NoEcho: true
+  EC2KEY:
+    Type: AWS::EC2::KeyPair::KeyName
+    Default: key2
+    NoEcho: true
+
+Resources:
+  EC2WebServer01:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: !Ref EC2AMI
+      InstanceType: t2.micro
+      KeyName: !Ref EC2KEY
+      AvailabilityZone: !Select [0, !GetAZs ]
+      SubnetId:
+        Fn::ImportValue: !Sub ${VPCStack}-PublicSubnet1a
+      SecurityGroupIds:
+        - Fn::ImportValue: !Sub ${SGStack}-EC2-WebServer
+      Tags:
+        - Key: Name
+          Value: !Sub ${AWS::StackName}-EC2WebServer01
+
+Outputs:
+  EC2WebServer01:
+    Description: EC2WebServer01
+    Value: !Ref EC2WebServer01
+    Export:
+      Name: !Sub ${AWS::StackName}-EC2WebServer01
