@@ -10,7 +10,7 @@ Parameters:
     Default: cfn-securitygroup
   EC2AMI:
     Type: AWS::EC2::Image::Id
-    Default: ami-0de4adc6a40e2be00
+    Default: ami-04180fbf1450ebc88
     NoEcho: true
   EC2KEY:
     Type: AWS::EC2::KeyPair::KeyName

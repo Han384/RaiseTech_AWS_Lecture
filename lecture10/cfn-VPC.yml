@@ -94,7 +94,6 @@ Resources:
 
   PublicRoute:
     Type: AWS::EC2::Route
-    DependsOn: CFnInternetGateway
     Properties:
       DestinationCidrBlock: 0.0.0.0/0
       GatewayId: !Ref CFnInternetGateway
