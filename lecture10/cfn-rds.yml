@@ -8,14 +8,6 @@ Parameters:
   SGStack:
     Type: String
     Default: cfn-securitygroup
-  DBUser:
-    Type: String
-    Default: admin
-    NoEcho: true
-  DBPassword:
-    Type: String
-    Default: raiseTechDem0!
-    NoEcho: true
 
 Resources:
   RDSDBInstance:
@@ -25,8 +17,8 @@ Resources:
       DBInstanceIdentifier: cfn-rds
       AllocatedStorage: 20
       DBInstanceClass: db.t3.micro
-      MasterUsername: !Ref DBUser
-      MasterUserPassword: !Ref DBPassword
+      MasterUsername: admin
+      ManageMasterUserPassword: true
       AvailabilityZone: !Select [0, !GetAZs ]
       MultiAZ: false
       PubliclyAccessible: false
