@@ -9,9 +9,8 @@ Parameters:
     Type: String
     Default: cfn-securitygroup
   EC2AMI:
-    Type: AWS::EC2::Image::Id
-    Default: ami-04180fbf1450ebc88
-    NoEcho: true
+    Type: AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>
+    Default: /aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2
 
 Resources:
   EC2WebServer01:
