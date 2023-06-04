@@ -231,6 +231,9 @@ $ tree
 ( 補足3：`EC2InstanceProfile / EC2IAMRole` - PublicSubnet 環境下にある EC2 に `SessionManager` を使用するための記述を実施 )<br>
 ( 補足4：SSH接続に関する設定は、後学のために削除せず記述を残置 ) ( ※本来はセキュリティ対策として要削除 )<br>
 ![04_cfn-ec2.png](images/04_cfn-ec2.png)<br>
+( 補足1：`Outputs - ALBEndpoint` - ELB (ALB) から EC2 への接続確認用に ALBエンドポイント を出力 )<br>
+( 補足2：`上記接続確認` - リソース構築後 EC2 に手動で Nginx をインストール。<br>
+  その後、出力された `ALBEndpoint` をブラウザ入力して Nginx のデフォルト画面 `Welcome to nginx!` の表示を確認 )<br>
 - ELB (ALB) - Application Layer　( 使用テンプレート：[05_cfn-elb.yml](CloudFormation_templates/05_cfn-elb.yml) )<br>
 ![05_cfn-elb.png](images/05_cfn-elb.png)<br>
 - S3 - Application Layer　( 使用テンプレート：[06_cfn-s3.yml](CloudFormation_templates/06_cfn-s3.yml) )<br>
