@@ -2,6 +2,7 @@
 ## 概要 / 詳細<br>
 - RaiseTech AWSフルコース ( 課題提出用リポジトリ )<br>
 - 各講義で課題設定があるものについてはマークダウンファイルにまとめて提出を実施<br>
+(例) 第5回講義の課題 ⇨ [lecture05.md](./lecture_task/lecture05/lecture05.md)<br>
 (例) 第10回講義の課題 ⇨ [lecture10.md](./lecture_task/lecture10/lecture10.md)<br>
 <br>
 【 学習/実践 (済) 内容 】
