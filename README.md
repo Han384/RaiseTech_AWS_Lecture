@@ -27,8 +27,8 @@
 ## ■ 実践内容　( ※ 第5回・第10回の内容を抜粋 )<br>
 ### 【 第5回：AWS上に Ruby on Rails のサンプルアプリケーションをデプロイ 】<br>
 - EC2上にサンプルアプリケーションをデプロイ
-  - 組み込みサーバー ( Puma ) でデプロイ
-  - WEBサーバー ( Nginx ) / APサーバー ( Unicorn ) に分けてデプロイ
+  - 組み込みサーバ ( Puma ) でデプロイ
+  - WEBサーバ ( Nginx ) / APサーバ ( Unicorn ) に分けてデプロイ
 - ELB (ALB) / S3  を追加・動作確認
 - Rails の Active Storage を連携、画像の保存先をS3に設定
 - AWS構成図作成
