@@ -27,16 +27,38 @@
 ## ■ 実践内容　( 第5回・第10回の内容を抜粋 )<br>
 ### 【 第5回：AWS上に Ruby on Rails のサンプルアプリケーションをデプロイ 】<br>
 - EC2上にサンプルアプリケーションをデプロイ
-  - 組み込みサーバー (Puma) でデプロイ
-  - WEBサーバー ( Nginx ) / APサーバー ( Unicorn ) に分けてデプロイ
+  - 組み込みサーバー ( Puma ) でデプロイ
+  - WEBサーバ ( Nginx ) / APサーバ ( Unicorn ) に分けてデプロイ
 - ELB (ALB) / S3  を追加・動作確認
 - Rails の Active Storage を連携、画像の保存先をS3に設定
 - AWS構成図作成
 
 <br>
 
-- デプロイ手順 ( [lecture05.md](./lecture_task/lecture05/lecture05.md) )
+- デプロイ - 全手順 ( [lecture05.md](./lecture_task/lecture05/lecture05.md) )
+- デプロイ - 部分手順 (※上記各手順別の構築・設定手順) ( [building_procedure](./lecture_task/lecture05/lecture05.md) )
 - Webアプリケーション ( デプロイ・ブラウザ動作確認 )
 ![Webアプリケーション-ブラウザ動作確認](./lecture_task/lecture05/images/S3_Rails(ActiveStorage)/browser_check1.png)<br>
 - AWS構成図
-![構成図](./lecture_task/lecture05/images/Diagram/diagram_lecture05.png)
+![構成図1](./lecture_task/lecture05/images/Diagram/diagram_lecture05.png)
+
+<br>
+
+### 【 第10回：CloudFormation を使用したインフラリソースの構築 】<br>
+- CloudFormation - 構築手順 ( [lecture10.md](./lecture_task/lecture10/lecture10.md) )
+- CloudFormation - 各リソース/スタックのテンプレートファイル ( [CloudFormation_templates](./lecture_task/lecture10/CloudFormation_templates) )
+- リソース構成図
+![構成図2](./lecture_task/lecture10/images//resource_diagram.png)
+- テンプレートファイル構成
+```
+|-- CloudFormation_templates
+|   |-- 01_cfn-vpc.yml
+|   |-- 02_cfn-securitygroup.yml
+|   |-- 03_cfn-rds.yml
+|   |-- 04_cfn-ec2.yml
+|   |-- 05_cfn-elb.yml
+|   `-- 06_cfn-s3.yml
+```
+- 各リソースのスタック<br>
+( ※各リソースのスタック名は テンプレートファイル名から引用/命名し、構築を実施 )<br>
+![00_cfn-stacks.png](./lecture_task/lecture10/images/00_cfn-stacks.png)<br>

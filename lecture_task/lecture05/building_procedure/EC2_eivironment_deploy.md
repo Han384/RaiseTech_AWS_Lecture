@@ -1,21 +1,22 @@
-# EC2 (環境構築・サンプルアプリケーションのデプロイ/起動
+# EC2 ( 環境構築・サンプルアプリケーションのデプロイ/起動 )
 
 <br><br>
 ( ※以下手順は、`/home/ec2-user` 配下にサンプルアプリケーションをクローン・配置して実施 )<br>
 
-1. [EC2へログイン / ログイン後の実施事項](#1-ec2へログイン--ログイン後の実施事項)
-1. [各種インストール](#2-各種インストール)
-1. [Railsアプリケーション (クローン・インストール・各種設定)](#3-railsアプリケーション-クローンインストール各種設定)
-1. [AWS (EC2のセキュリティグループ設定)](#4-aws-ec2のセキュリティグループ設定)
-1. [Railsアプリケーション (起動前実施事項：アセットコンパイル)](#5-railsアプリケーション-起動前実施事項アセットコンパイル)
-1. [Railsアプリケーション (起動：組込サーバ (Puma) )](#6-railsアプリケーション-起動組込サーバ-puma-)<br>
+- [EC2 ( 環境構築・サンプルアプリケーションのデプロイ/起動 )](#ec2--環境構築サンプルアプリケーションのデプロイ起動-)
+  - [1. EC2へログイン / ログイン後の実施事項](#1-ec2へログイン--ログイン後の実施事項)
+  - [2. 各種インストール](#2-各種インストール)
+  - [3. Railsアプリケーション (クローン・インストール・各種設定)](#3-railsアプリケーション-クローンインストール各種設定)
+  - [4. AWS (EC2のセキュリティグループ設定)](#4-aws-ec2のセキュリティグループ設定)
+  - [5. Railsアプリケーション (起動前実施事項：アセットコンパイル)](#5-railsアプリケーション-起動前実施事項アセットコンパイル)
+  - [6. Railsアプリケーション (起動：組込サーバ (Puma) )](#6-railsアプリケーション-起動組込サーバ-puma-)
 
-| 動作環境 | バージョン | 
-| -------- | ---------- |  
-| Ruby     | 3.1.2      |  
-| Bundler  | 2.3.14     |  
-| Rails    | 7.0.4      |  
-| Node     | v17.9.1    |  
+| 動作環境 | バージョン |
+| -------- | ---------- |
+| Ruby     | 3.1.2      |
+| Bundler  | 2.3.14     |
+| Rails    | 7.0.4      |
+| Node     | v17.9.1    |
 | Yarn     | 1.22.19    | <br>
 
 <br><br>
@@ -27,11 +28,11 @@
  $ pwd
  ```
 <details><summary>swap作成 ( ※EC2のメモリ不足を補うため、必要に応じて実施 )</summary>
-   
+
 ```
 # メモリ使用状況確認
 $ free -m
- 
+
 # スワップ作成状況確認 ( 下記表示(未作成)を確認 )
 $ grep Swap /proc/meminfo
 -------------------------------
@@ -42,7 +43,7 @@ SwapFree:              0 kB
 
 # 512MBのスワップファイルを作成
 $ sudo dd if=/dev/zero of=/swapfile bs=1M count=512
- 
+
 # スワップファイルの読み書きのアクセス許可
 $ sudo chmod 600 /swapfile
 
@@ -52,10 +53,10 @@ $ sudo mkswap /swapfile
 スワップ空間バージョン 1 を設定します。サイズ = 512 MiB (536866816 バイト)
 ラベルはありません, UUID=×××
 -------------------------------
- 
+
 # スワップ領域にスワップファイルを追加
 $ sudo swapon /swapfile
- 
+
 # 正常に完了したことを確認
 $ sudo swapon -s
 -------------------------------
@@ -76,10 +77,10 @@ SwapCached:            0 kB
 SwapTotal:        524284 kB
 SwapFree:         524284 kB
 -------------------------------
- 
+
 # メモリ使用状況確認
 $ free -m
-```   
+```
 </details>
 
 
@@ -95,7 +96,7 @@ $ sudo yum -y update
 ```
 $ sudo yum -y install gcc-c++ make patch git curl zlib-devel openssl-devel ImageMagick-devel readline-devel libcurl-devel libffi-devel libicu-devel libxml2-devel libxslt-devel
 ```
-   
+
 <br><br>
 ■ rbenvのインストール
 ```
@@ -107,13 +108,13 @@ $ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
 $ echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
 $ source .bash_profile
 ```
-   
+
 <br><br>
 ■ ruby-buildのインストール
 ```
 $ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 ```
-   
+
 <br><br>
 ■ Rubyをインストール　( ※rbenvを使用：バージョンは `3.1.2` )<br>
   　( 補足：※インストールにしばらく時間がかかる )
@@ -127,7 +128,7 @@ $ rbenv rehash
 # Rubyのバージョン確認
 $ ruby -v
 ```
-   
+
 <br><br>
 ■ Railsをインストール　( ※バージョンは `7.0.4` )
 ```
@@ -151,13 +152,13 @@ $ node -v
 
 <br><br>
 ■ yarnをインストール
-```  
+```
 $ npm install --global yarn
 
 # インストール確認
 $ yarn -v
 ```
-   
+
 <br><br>
 ■ MySQLをインストール<br>
 - MariaDBをアンインストール<br>
@@ -185,7 +186,7 @@ $ sudo service mysqld start && sudo service mysqld status
 
 # 自動起動の確認 (※有効化していなければ `sudo systemctl enable mysqld` を実行)
 $ sudo systemctl is-enabled mysqld
-```   
+```
 
 <br><br>
 ## 3. Railsアプリケーション (クローン・インストール・各種設定)
@@ -193,7 +194,7 @@ $ sudo systemctl is-enabled mysqld
 ```
 $ git clone https://github.com/yuta-ushijima/raisetech-live8-sample-app.git
 ```
-   
+
 <br><br>
 ■ `raisetech-live8-sample-app` ディレクトリに移動し以降の手順を実施
 ```
@@ -202,7 +203,7 @@ $ cd raisetech-live8-sample-app
 # /home/ec2-userraisetech-live8-sample-app と表示されることを確認
 $ pwd
 ```
-   
+
 <br><br>
 ■ Bundlerのインストール　( ※バージョンは `2.3.14` )
 ```
@@ -215,21 +216,21 @@ $ bundler -v
 <br><br>
 ■ Bundlerを使用してGemfile記載のライブラリ群を一括インストール
 ```
-$ bundle install 
+$ bundle install
 ```
-   
+
 <br><br>
 ■ 念のため、サンプルアプリケーション動作環境(インストールしたもの)のバージョンを確認
 ```
 $ ruby -v && bundle -v && rails -v && node -v && yarn -v
 ```
-| 動作環境 | バージョン |  
-| -------- | ---------- |  
-| Ruby     | 3.1.2      |  
-| Bundler  | 2.3.14     |  
-| Rails    | 7.0.4      |  
-| Node     | v17.9.1    |  
-| Yarn     | 1.22.19    | 
+| 動作環境 | バージョン |
+| -------- | ---------- |
+| Ruby     | 3.1.2      |
+| Bundler  | 2.3.14     |
+| Rails    | 7.0.4      |
+| Node     | v17.9.1    |
+| Yarn     | 1.22.19    |
 
 
 <br><br>
@@ -280,12 +281,12 @@ $ bundle exec rails db:create
 # DB(MySQL)にテーブルを作成
 $ bundle exec rails db:migrate
 ```
-  
+
 <br><br>
 ## 4. AWS (EC2のセキュリティグループ設定)
 ■ EC2のセキュリティグループ(インバウンド)を編集 ： `3000番ポート`の許可設定 ( ※下図参照 )<br>
 ![EC2のセキュリティグループ(インバウンド)：3000番ポートの許可設定](../images/EC2_environment_deploy/securitygroup.png)
-    
+
 <br><br>
 ## 5. Railsアプリケーション (起動前実施事項：アセットコンパイル)
 ■ アセットコンパイル<br>
@@ -294,7 +295,7 @@ $ bundle exec rails db:migrate
 $ rails assets:precompile
 ```
 ( 実行後、`/home/ec2-user/raisetech-live8-sample-app/public/assets` フォルダ配下に各種ファイルが作成されることを確認 )
-   
+
 <br><br>
 ## 6. Railsアプリケーション (起動：組込サーバ (Puma) )
 ■ Railsの組込サーバ (Puma) を起動
