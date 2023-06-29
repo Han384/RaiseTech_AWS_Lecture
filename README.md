@@ -24,11 +24,11 @@
 
 <br>
 
-## ■ 実践内容　( 第5回・第10回の内容を抜粋 )<br>
+## ■ 実践内容　( ※ 第5回・第10回の内容を抜粋 )<br>
 ### 【 第5回：AWS上に Ruby on Rails のサンプルアプリケーションをデプロイ 】<br>
 - EC2上にサンプルアプリケーションをデプロイ
   - 組み込みサーバー ( Puma ) でデプロイ
-  - WEBサーバ ( Nginx ) / APサーバ ( Unicorn ) に分けてデプロイ
+  - WEBサーバー ( Nginx ) / APサーバー ( Unicorn ) に分けてデプロイ
 - ELB (ALB) / S3  を追加・動作確認
 - Rails の Active Storage を連携、画像の保存先をS3に設定
 - AWS構成図作成
@@ -36,11 +36,11 @@
 <br>
 
 - デプロイ - 全手順 ( [lecture05.md](./lecture_task/lecture05/lecture05.md) )
-- デプロイ - 部分手順 (※上記各手順別の構築・設定手順) ( [building_procedure](./lecture_task/lecture05/lecture05.md) )
+- デプロイ - 部分手順 ( ※上記各手順別の構築・設定手順 ) ( [building_procedure](./lecture_task/lecture05//building_procedure) )
 - Webアプリケーション ( デプロイ・ブラウザ動作確認 )
 ![Webアプリケーション-ブラウザ動作確認](./lecture_task/lecture05/images/S3_Rails(ActiveStorage)/browser_check1.png)<br>
 - AWS構成図
-![構成図1](./lecture_task/lecture05/images/Diagram/diagram_lecture05.png)
+![構成図1](./lecture_task/lecture05/images/Diagram/diagram_lecture05.png)<br>
 
 <br>
 
