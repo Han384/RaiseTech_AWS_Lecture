@@ -25,10 +25,10 @@
 <br>
 
 ## ■ 実践内容　( ※ 第5回・第10回の内容を抜粋 )<br>
-### 【 第5回：AWS上に Ruby on Rails のサンプルアプリケーションをデプロイ 】<br>
+### 【 第5回 - AWS上に Ruby on Rails のサンプルアプリケーションをデプロイ 】<br>
 - EC2上にサンプルアプリケーションをデプロイ
   - 組み込みサーバ ( Puma ) でデプロイ
-  - WEBサーバ ( Nginx ) / APサーバ ( Unicorn ) に分けてデプロイ
+  - Webサーバ ( Nginx ) / APサーバ ( Unicorn ) に分けてデプロイ
 - ELB (ALB) / S3  を追加・動作確認
 - Rails の Active Storage を連携、画像の保存先をS3に設定
 - AWS構成図作成
@@ -44,7 +44,7 @@
 
 <br>
 
-### 【 第10回：CloudFormation を使用したインフラリソースの構築 】<br>
+### 【 第10回 - CloudFormation を使用したインフラリソースの構築 】<br>
 - CloudFormation - 構築手順 ( [lecture10.md](./lecture_task/lecture10/lecture10.md) )
 - CloudFormation - 各リソース/スタックのテンプレートファイル ( [CloudFormation_templates](./lecture_task/lecture10/CloudFormation_templates) )
 - リソース構成図
