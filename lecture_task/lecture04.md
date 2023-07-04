@@ -7,14 +7,14 @@
 ![VPCの作成②](https://user-images.githubusercontent.com/88935162/234941317-617cc96a-2d57-4cd0-8089-9c8def1afa4d.png)
 
 ### **2. EC2の作成**
-![EC2の作成](https://user-images.githubusercontent.com/88935162/234941602-06bf2902-01e8-4200-a7e9-e67da0793b15.png)
-(EC2のセキュリティグループ)
+![EC2の作成](https://user-images.githubusercontent.com/88935162/234941602-06bf2902-01e8-4200-a7e9-e67da0793b15.png)<br>
+(EC2のセキュリティグループ)<br>
 ![EC2のセキュリティグループ①](https://user-images.githubusercontent.com/131488219/235136080-38832849-9d72-4b24-bdd9-d2e7822fceea.png)
 ![EC2のセキュリティグループ②](https://user-images.githubusercontent.com/131488219/235136189-d1e0cea5-fcef-4aea-9c35-94703c947465.png)
 
 ### **3. RDSの作成**
-![RDSの作成](https://user-images.githubusercontent.com/88935162/234941918-1e4b51b1-14b7-4cec-9b43-bb50da3d6312.png)
-(RDSのセキュリティグループ)
+![RDSの作成](https://user-images.githubusercontent.com/88935162/234941918-1e4b51b1-14b7-4cec-9b43-bb50da3d6312.png)<br>
+(RDSのセキュリティグループ)<br>
 ![RDSのセキュリティグループ](https://user-images.githubusercontent.com/131488219/235138299-40ca56a5-997c-4e86-bb3d-926450dbea04.png)
 
 ### **4. EC2への接続確認**
