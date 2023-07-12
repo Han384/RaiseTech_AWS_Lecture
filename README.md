@@ -4,7 +4,7 @@
 - インフラ構築・設定など、下記の実践内容を記載
   - AWS上に Ruby on Rails のサンプルアプリケーションをデプロイ
   - CloudFormation を使用したインフラリソースの構築
-  - オンラインスクールでのアウトプット一覧 (実践/学習記録)
+  - オンラインスクールでのアウトプット一覧　( 実践/学習記録 )
 
 <br>
 
@@ -38,13 +38,13 @@
 
 ## ■ CloudFormation を使用したインフラリソースの構築<br>
 【 実践内容 】
-- CloudFormation -  [構築手順](./Tasks/lecture10/lecture10.md)　　( ※下記構成図のリソース構築を実施 )
-- CloudFormation - 各リソース/スタックのテンプレートファイル　( 参照：[CloudFormation_templates](./Tasks/lecture10/CloudFormation_templates) )
+- [構築手順](./Tasks/lecture10/lecture10.md)　( ※下記構成図のリソース構築を実施 )
+- 各リソース/スタックのテンプレートファイル ( [CloudFormation_templates](./Tasks/lecture10/CloudFormation_templates) ) を作成
 - その他、ベストプラクティス・セキュリティ対策を考慮して下記取組を実施
   - BlackBeltを参照してベストプラクティスなどをインプット、実践はその内容を踏まえて実施
   - ハードコーディングを避けるための動的参照 - SSMパラメータストア を活用
   - RDS - SecretsManager での認証情報 (シークレット) 管理を反映
-  - EC2 - SessionManager を活用 ( ※SSH接続に関する設定は、後学のために削除せず記述を残置 )<br>
+  - EC2 - SessionManager を活用　( ※SSH接続に関する設定は、後学のために削除せず記述を残置 )<br>
 - AWS構成図
 ![構成図2](./Tasks/lecture10/images//resource_diagram.png)
 - テンプレートファイル構成
@@ -63,8 +63,8 @@
 
 <br>
 
-## ■ オンラインスクールでのアウトプット一覧 (実践/学習記録)<br>
-- オンラインスクール(RaiseTech)での実践/学習記録を各ファイルに記載
+## ■ オンラインスクールでのアウトプット一覧　( 実践/学習記録 )<br>
+- オンラインスクール (RaiseTech) での実践/学習記録を各ファイルに記載
 
 | Files                                                  | Contents                                                                                |
 | :---------------------------------------------------: | :------------------------------------------------------------------------------------: |
