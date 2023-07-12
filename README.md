@@ -1,15 +1,14 @@
 # 【 インフラ構築 実践 】<br>
 
+## ■ 概要
+- インフラ構築・設定など、実践内容を記載
+  - [AWS上に Ruby on Rails のサンプルアプリケーションをデプロイ](#-aws上に-ruby-on-rails-のサンプルアプリケーションをデプロイ)
+  - [CloudFormation を使用したインフラリソースの構築](#-cloudformation-を使用したインフラリソースの構築)
+  - [オンラインスクールでのアウトプット一覧 (実践/学習記録)](#-オンラインスクールでのアウトプット一覧-実践学習記録)
+
 <br>
 
-## 概要
-- インフラ構築・設定など、実践内容を記載
-  - [AWS上に Ruby on Rails のサンプルアプリケーションをデプロイ](#aws上に-ruby-on-rails-のサンプルアプリケーションをデプロイ)
-  - [CloudFormation を使用したインフラリソースの構築](#cloudformation-を使用したインフラリソースの構築)
-  - [オンラインスクールでのアウトプット一覧 (実践/学習記録)](#オンラインスクールでのアウトプット一覧-実践学習記録)
-
-
-## AWS上に Ruby on Rails のサンプルアプリケーションをデプロイ<br>
+## ■ AWS上に Ruby on Rails のサンプルアプリケーションをデプロイ<br>
 【 実践内容 】
 - EC2上にサンプルアプリケーションをデプロイ
   - 組み込みサーバ ( Puma ) でデプロイ
@@ -37,7 +36,7 @@
 
 <br>
 
-## CloudFormation を使用したインフラリソースの構築<br>
+## ■ CloudFormation を使用したインフラリソースの構築<br>
 【 実践内容 】
 - CloudFormation -  [構築手順](./Tasks/lecture10/lecture10.md)　　( ※下記構成図のリソース構築を実施 )
 - CloudFormation - 各リソース/スタックのテンプレートファイル　( 参照：[CloudFormation_templates](./Tasks/lecture10/CloudFormation_templates) )
@@ -64,7 +63,7 @@
 
 <br>
 
-## オンラインスクールでのアウトプット一覧 (実践/学習記録)<br>
+## ■ オンラインスクールでのアウトプット一覧 (実践/学習記録)<br>
 - オンラインスクール(RaiseTech)での実践/学習記録を各ファイルに記載
 
 | Files                                                  | Contents                                                                                |
