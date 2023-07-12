@@ -1,4 +1,8 @@
-# ■ 概要<br>
+# 【 インフラ構築 実践 】<br>
+
+<br>
+
+## 概要
 - インフラ構築・設定など、実践内容を記載
   - [AWS上に Ruby on Rails のサンプルアプリケーションをデプロイ](#aws上に-ruby-on-rails-のサンプルアプリケーションをデプロイ)
   - [CloudFormation を使用したインフラリソースの構築](#cloudformation-を使用したインフラリソースの構築)
@@ -22,6 +26,8 @@
 | Node     | v17.9.1    |
 | Yarn     | 1.22.19    | <br>
 
+<br>
+
 - デプロイ - [全手順](./Tasks/lecture05/lecture05.md)
 - デプロイ - [部分手順](./Tasks/lecture05//building_procedure) ( ※上記各手順別の構築・設定手順 )
 - AWS構成図
@@ -33,13 +39,13 @@
 
 ## CloudFormation を使用したインフラリソースの構築<br>
 【 実践内容 】
-- CloudFormation -  [構築手順](./Tasks/lecture10/lecture10.md)　( ※下記構成図のリソース構築を実施 )
-- CloudFormation - 各リソース/スタックのテンプレートファイル ( [CloudFormation_templates](./Tasks/lecture10/CloudFormation_templates) )
-- ベストプラクティス･セキュリティ対策を考慮し、下記取組を実施･反映
-  - BlackBeltを参照してインプット、実践はその内容を踏まえて実施･実装
-  - ハードコーディングを避けるための動的参照 - SSMパラメータストア の利活用
-  - RDS - SecretsManager での認証情報 (シークレット) 管理
-  - EC2 - SessionManager の利活用 ( ※SSH接続に関する設定は、後学のために削除せず記述を残置 )<br>
+- CloudFormation -  [構築手順](./Tasks/lecture10/lecture10.md)　　( ※下記構成図のリソース構築を実施 )
+- CloudFormation - 各リソース/スタックのテンプレートファイル　( 参照：[CloudFormation_templates](./Tasks/lecture10/CloudFormation_templates) )
+- その他、ベストプラクティス・セキュリティ対策を考慮して下記取組を実施
+  - BlackBeltを参照してベストプラクティスなどをインプット、実践はその内容を踏まえて実施
+  - ハードコーディングを避けるための動的参照 - SSMパラメータストア を活用
+  - RDS - SecretsManager での認証情報 (シークレット) 管理を反映
+  - EC2 - SessionManager を活用 ( ※SSH接続に関する設定は、後学のために削除せず記述を残置 )<br>
 - AWS構成図
 ![構成図2](./Tasks/lecture10/images//resource_diagram.png)
 - テンプレートファイル構成
@@ -61,7 +67,7 @@
 ## オンラインスクールでのアウトプット一覧 (実践/学習記録)<br>
 - オンラインスクール(RaiseTech)での実践/学習記録を各ファイルに記載
 
-| File                                                  | Content                                                                                |
+| Files                                                  | Contents                                                                                |
 | :---------------------------------------------------: | :------------------------------------------------------------------------------------: |
 | [lecture02.md](./Tasks/lecture02.md)           | Git/GitHubを用いたチーム開発におけるバージョン管理                                     |
 | [lecture03.md](./Tasks/lecture03.md)           | Ruby on RailsによるWebアプリケーションのデプロイ                                       |
