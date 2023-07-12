@@ -38,7 +38,7 @@
 
 ## ■ CloudFormation を使用したインフラリソースの構築<br>
 【 実践内容 】
-- [構築手順](./Tasks/lecture10/lecture10.md)　( ※下記構成図のリソース構築を実施 )
+- [構築実践の取組](./Tasks/lecture10/lecture10.md)　( ※下記構成図のリソース構築を実施 )
 - 各リソース/スタックのテンプレートファイル ( [CloudFormation_templates](./Tasks/lecture10/CloudFormation_templates) ) を作成
 - その他、ベストプラクティス・セキュリティ対策を考慮して下記取組を実施
   - BlackBeltを参照してベストプラクティスなどをインプット、実践はその内容を踏まえて実施
